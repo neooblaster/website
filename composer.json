@@ -1,0 +1,27 @@
+{
+    "name": "neooblaster/website",
+    "description": "All ressources loaded and installed to start quickly a new website.",
+
+    "config" : {
+        "vendor-dir": "lib/vendor"
+    },
+
+    "require": {
+        "neooblaster/template": "^3.6",
+        "neooblaster/syslang": "@dev",
+        "neooblaster/xhrquery": "^1.4"
+    },
+
+    "scripts": {
+        "post-update-cmd": "@transfert",
+        "post-install-cmd": "@transfert",
+
+        "transfert": [
+            "cp -r lib/vendor/neooblaster/template/src/* ./lib/classes/",
+            "cp -r lib/vendor/neooblaster/syslang/src/* ./lib/classes/",
+            "chmod +x lib/vendor/neooblaster/syslang/src/command_index.php",
+            "sudo ln -s $PWD/lib/vendor/neooblaster/syslang/src/command_index.php /usr/local/bin/syslang",
+            "cp -r lib/vendor/neooblaster/xhrquery/src/xhrQuery.js ./lib/js/"
+        ]
+    }
+}
