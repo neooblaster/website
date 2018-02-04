@@ -1,6 +1,7 @@
 {
     "name": "neooblaster/website",
     "description": "All ressources loaded and installed to start quickly a new website.",
+    "license": "GPL-3.0-or-later",
 
     "config" : {
         "vendor-dir": "lib/vendor"
